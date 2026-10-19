@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urna Eletrônica</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+
+    <section class="caixa-cpf" id="telaCPF">
+      <h1>URNA ELETRÔNICA</h1>
+      <p>Digite seu CPF:</p>
+
+      <form id="formCPF" novalidate>
+        <input
+          id="cpf"
+          type="text"
+          inputmode="numeric"
+          maxlength="11"
+          placeholder="11 números"
+          required
+        >
+        <button class="botao-cpf" type="submit">INICIAR</button>
+      </form>
+
+      <p id="mensagemCPF" class="mensagem"></p>
+    </section>
+
+    <section class="urna-container" id="telaUrna" hidden>
+      <div class="urna">
+
+        <section class="tela">
+          <p id="progresso"></p>
+          <h1 id="cargo"></h1>
+
+          <p>Número:</p>
+          <div class="visor"><span id="numero"></span></div>
+
+          <div class="candidato">
+            <div class="foto-container">
+              <img id="foto" alt="" hidden>
+              <div id="fotoIndisponivel" class="foto-placeholder">FOTO</div>
+            </div>
+
+            <div class="dados">
+              <h2 id="nome">Digite o número</h2>
+              <p id="partido"></p>
+            </div>
+          </div>
+
+          <p id="mensagem" class="mensagem"></p>
+          <p class="instrucoes">Confira os dados e confirme seu voto.</p>
+        </section>
+
+        <section class="painel">
+          <div class="teclado">
+            <button data-numero="1">1</button>
+            <button data-numero="2">2</button>
+            <button data-numero="3">3</button>
+            <button data-numero="4">4</button>
+            <button data-numero="5">5</button>
+            <button data-numero="6">6</button>
+            <button data-numero="7">7</button>
+            <button data-numero="8">8</button>
+            <button data-numero="9">9</button>
+            <span></span>
+            <button data-numero="0">0</button>
+            <span></span>
+          </div>
+
+          <div class="acoes">
+            <button class="branco" id="btnBranco">BRANCO</button>
+            <button class="corrige" id="btnCorrige">CORRIGE</button>
+            <button class="confirma" id="btnConfirma">CONFIRMA</button>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+    <section id="telaFinal" class="caixa-cpf" hidden>
+      <h1>FIM</h1>
+      <button class="botao-cpf" id="btnInicio">VOLTAR AO INÍCIO</button>
+    </section>
+
+  </main>
+</body>
+</html>
